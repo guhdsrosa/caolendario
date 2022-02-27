@@ -1,0 +1,840 @@
+/* estilos gerais */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* barra de navegação */
+
+.header {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 105vh;
+    padding-top: 20px;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    padding-top: 0px;
+    padding-bottom: 3px;
+    position: absolute;
+    transform: all 0.3s;
+    background-color: #fff;
+    z-index: 9;
+    top: 0px;
+    width: 100%;
+}
+
+.nav ul{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav ul li {
+    display: flex;
+}
+/*Cor da barra de navegação*/
+.nav ul li a {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.1em;
+    color: #444444;
+    padding: 0.25rem 0;
+    margin: 10px 1.80rem;
+    text-transform: uppercase;    
+}
+/*HOVER DA BARRA DE MENU*/
+.nav ul li a:hover {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.1em;
+    color: #ff7400;
+    padding: 0.25rem 0;
+    margin: 10px 1.80rem;
+    text-transform: uppercase;
+    text-decoration: none;    
+}
+
+.nav ul li.logo .black {
+    display: none;    
+}
+
+.nav ul li.logo a {
+    margin: 0 4rem;
+}
+
+.nav-icon {
+    position: absolute;
+    top: 27px;
+    right: 30px;
+    padding: 5px;
+    width: 40px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.nav-icon span {
+    background-color: #333;
+    width: 30px;
+    height: 1px;
+    display: block;
+    transition: 300ms linear all;
+}
+
+.nav-icon span:nth-child(1),
+.nav-icon span:nth-child(3) {
+    width: 20px;
+    margin: 0 auto;
+}
+
+.nav-icon span:nth-child(2) {
+    margin: 5px 0;
+    width: 32px;
+}
+
+.nav-icon:hover span:nth-child(1),
+.nav-icon:hover span:nth-child(3) {
+    width: 30px;
+}
+
+.full-nav {
+    background: #ff7400;
+    color: #18191d;
+    position: fixed;
+    left: 0;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    padding: 3.75rem;
+    z-index: 99;
+    overflow-x: hidden;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-100px);
+    transition: all .4s ease-in-out;
+}
+
+
+.full-nav.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: all .4s ease-in-out;
+    z-index: 99;
+}
+
+.full-nav .logo {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.nav2 {
+    display: flex;
+    justify-content: center;
+}
+
+.nav2 ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 700px;
+}
+/*COR DAS BORDA DO MENU SECUNDARIO*/
+.nav2 ul li {
+    display: flex;
+    flex: 50%;
+    background-color: #f5f5f5;
+    padding: 1rem;
+    border-bottom: 10px solid #ff7400;
+    border-right: 10px solid #ff7400;
+    transition: all 0.5s;
+}
+/*Fonte do menu secundario*/
+.nav2 ul li a {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.4rem;
+    color: #444444;
+}
+/*Cor dos numeros*/
+.nav2 ul li a span {
+    color: #6A00A4;
+}
+/* cor do menu quando clica */
+.nav2 ul li:hover{
+    background-color: #7900A4;
+}
+
+.nav2 ul li:hover a,
+.nav2 ul li:hover a span {
+    /* cor do texto */
+    color: #ff7400;
+    font-family: 'Fredoka One', cursive;
+    text-decoration: none;
+}
+
+.social-icons a {
+    color: #123987;
+    border: 3px solid #999999;
+    width: 50px;
+    height: 50px;
+    line-height: 40px;
+    font-size: 20px;
+    display: inherit;
+    text-align: center;
+    border-radius: 50px;
+    transition: all ease 1s;
+    margin-top: 40px;
+}
+/*Cor do circulo das redes sociais*/
+.social-icons a:hover i{
+    color: #ff7400;
+    margin-top: -10px;
+    border-color: #442233;
+}
+
+ul.social-icons.list-inline {
+    text-align: center;
+    margin-top: 22px;
+}
+
+.list-inline > li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.social-icons a:hover {
+    color: #669988;
+    margin-top: -10px;
+    border-color: #7900A4;
+}
+/*Cor da bolinha do hamburguer*/
+.circle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 120px;
+    height: 120px;
+    background-color: #fff;
+    border-radius: 0 0 0 120px;
+    z-index: 2;
+}
+
+.nav-close {
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+/*Cor do X do hamburguer*/
+.nav-close span {
+    background-color: #ff7400;
+    width: 30px;
+    height: 1px;
+    display: block;
+    position: absolute;
+    top: 14px;
+}
+
+.nav-close span:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+.nav-close span:nth-child(2) {
+    transform: rotate(-45deg);
+}
+/*Cores da barra de navegação*/
+.nav.sticky {
+    width: 100%;
+    position: fixed;
+    background-color: #ffffffb1;
+    box-shadow: 0 10px 10px -10px #000000b1;
+    animation-name: animationFade;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes animationFade{
+    from{
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+    to{
+        opacity: 1;
+        transform: none;
+        -webkit-transform: none;
+        -o-transform: none;
+    }
+}
+/*Cor do texto barra de navegção fixed*/
+.nav.sticky a{
+    color: #444444;
+    font-family: 'Fredoka One', cursive;
+}
+/*Cor do texto barra de navegção fixed hover*/
+.nav.sticky a:hover{
+    color: #ff7400;
+    font-family: 'Fredoka One', cursive;
+    text-decoration: none;
+}
+
+.nav.sticky ul li.logo .white {
+    display: none;
+}
+
+.nav.sticky ul li.logo .black {
+    display: inline-block;
+}
+
+.nav.stick .nav-icon span {
+    background: #741963;
+}
+
+video#doghero {
+    width: 100%;
+}
+
+.bx-wrapper .social-icons a{
+    color: #659102;
+    border: 1px solid #ff7400;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    display: inherit;
+    text-align: center;
+    padding-top: 5px;
+    transition: all ease 1s;
+    background: #000;
+    border-radius: 0px;
+}
+
+.bx-wrapper .social-icons a i{
+    position: relative;
+    bottom: 7px;
+}
+
+.content-video{
+    position: absolute;
+    top: 290px;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+}
+/*Cor da fonbt dos videos*/
+.content-video h1 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 2em;
+    font-weight: bold;
+    color: #ff7400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.content-video p {
+    font-family: 'Varela Round', sans-serif;
+}
+/*Cor do botao clique aki*/
+.video-btn {
+    font-family: 'Fredoka One', cursive;
+    display: inline-block;
+    font-size: 16px;
+    padding: 15px 40px;
+    border: none;
+    background: #fff;
+    color: #444444;
+    cursor: pointer;
+    margin-top: 18px;
+    border-radius: 50px;
+    animation: shadow-pulse 2s infinite;
+    text-transform: uppercase;
+}
+
+.video-btn:hover {
+    font-family: 'Fredoka One', cursive;
+    display: inline-block;
+    font-size: 16px;
+    padding: 15px 40px;
+    border: none;
+    background: #fff;
+    color: #F58000;
+    cursor: pointer;
+    margin-top: 18px;
+    border-radius: 50px;
+    animation: shadow-pulse 2s infinite;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+@keyframes shadow-pulse {
+    0%{
+        box-shadow: 0 0 0 0px rgba(0,0,0,0.2);
+    }
+    100%{
+        box-shadow: 0 0 0 20px rgba(0,0,0,0);
+    }
+}
+
+#dohero:hover {
+    background-color: #fff;
+    color: #000;
+    animation: none;
+    text-decoration: none;
+}
+
+/*Cor dos icones antes do hover*/
+.social-icons a{
+    color: #444444 !important;
+    border: 4px solid #fff;
+    width: 50px;
+    height: 50px;
+    line-height: 40px;
+    font-size: 20px;
+    display: inherit;
+    text-align: center;
+    border-radius: 50px;
+    transition: all ease 1s;
+    margin-top: 40px;
+    background: white !important;    
+}
+
+ul.social-icons.list-inline {
+    text-align: center;
+    margin-top: 22px;
+}
+
+.list-inline>li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+/* scroll top */
+
+.scrollTop {
+    position: fixed;
+    bottom: 100px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border-radius: 50%;
+    background-size: 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    z-index: 100000;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.scrollTop.active {
+    bottom: 40px;
+    visibility: visible;
+    opacity: 1;
+}
+
+/* sobre area */
+
+.grid-container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: auto auto auto auto;
+    padding: 100px;
+}
+
+.grid-container h2{
+    color: #7900A4;
+    font-family: 'Fredoka One', cursive;
+    text-align: center;
+}
+
+.grid-container li {
+    font-family: 'Varela Round', sans-serif;
+    padding-left: 10%;
+}
+
+.grid-item {
+    padding: 20px 20px 20px 60px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.about-list{
+    list-style: none;
+    padding-left: 30%;
+    padding-right: 30%;
+}
+
+.about-list li{
+    position: relative;
+    margin: 10px 0px;
+    float: left;
+}
+
+.about-list li i {
+    padding: 0px 5px 0px 10px;
+}
+
+/* area dos cards */
+
+.main-title {
+    font-family: 'Fredoka One', cursive, sans-serif;
+    text-transform: uppercase;
+    font-size: 36px;
+    font-weight: 600;
+    color: #ff7400 !important;
+    padding-top: 30px;
+}
+
+.container-cards {
+    padding-right: 25%;
+    padding-left: 25%;
+}
+
+#area-card {
+    background-color: rgb(250, 250, 250);
+}
+
+.card-item{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    padding-bottom: 59px;
+    width: 100%;
+    max-width: 270px;
+    color: #555555;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card-item figure{
+    position: relative;
+    height: 300px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    border-radius: 5px;
+    background-size: cover;
+    transition: bottom 300ms ease-in-out;
+}
+
+.card-item figure:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ff7400;  /* cor de fundo do card */
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transition: opacity 300ms ease-in-out;
+}
+
+.card-item:hover figure:before{
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.card-item .descricao{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 18px 10px 10px;
+    margin-bottom: 70px;  /* distancia entre a parte branca e o card */
+    background-color: #fff;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 300ms ease-in-out, margin-bottom 300ms ease-in-out;
+}
+
+.card-item:hover .descricao{
+    margin-bottom: 0px;
+    transform: translateY(0%);
+}
+
+.card-item .descricao p{
+    margin-top: 25px; /* distanciamento das palavras */
+}
+
+.card-item .name,
+.card-item .city{
+    line-height: 1;
+    text-transform: uppercase;
+    margin: 0!important;
+}
+
+.card-item .name{
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.card-item .city{
+    font-size: 12px !important;
+    color: #494949;
+    font-weight: 600;
+}
+
+/* Botão veja mais*/
+
+.button-vm{
+    text-align: center;
+    padding-bottom: 30px;
+    font-family: 'Fredoka One', cursive;
+}
+
+.button-vm button{
+    padding: 15px 10px 15px 10px;
+    background-color: #ff7400;
+    border-color: #ff7400;
+    color: white;
+}
+
+.button-vm button:hover{
+    background-color: #7900A4;
+    border-color: #7800A4;
+    color: white;
+}
+
+/* dados area */
+
+.dados-title {
+    text-align: center;
+    font-family: 'Fredoka One', cursive;
+    color: #fff;
+    padding-bottom: 30px;
+}
+
+#dados-area {
+    padding: 100px;
+}
+
+.circle-box div {
+    padding: 10px 40px;
+}
+
+.progressbar-text {
+    font-weight: bold;
+    font-size: 32px;
+}
+
+#dados-area p {
+    color: #000000;
+    text-align: center;
+    font-size: 26px;
+    margin-top: 20px;
+}
+
+#dados-area p {
+    color: #fff;
+    font-family: 'Fredoka One', cursive;
+}
+
+/* galeria de fotos */
+
+#gallery h3 {
+    font-family: 'Fredoka One', cursive, sans-serif;
+    text-transform: uppercase;
+    font-size: 36px;
+    font-weight: 600;
+    color: #ff7400 !important;
+}
+
+.row.no-gutters [class*=col-]{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.img-wrapper {
+    overflow: hidden;
+}
+
+.img-wrapper img {
+    transition: transform .5s ease;
+}
+
+.img-wrapper img:hover {
+    transform: scale(1.5);
+    cursor: zoom-in;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* ajude o site */
+
+.container button{
+    background-color: #ff9100;
+    border-color: #ff9100;
+    color: white;
+}
+
+.container button:hover{
+    background-color: #ff7400;
+    border-color: #ff7400;
+    color: white;
+}
+
+.container {
+    margin: 0;
+    padding: 70px 0px 70px 0px;
+}
+
+.text-align {
+    padding: 100px;
+    text-align: center;
+    font-family: 'Fredoka One', cursive, sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.text-align h1{
+    color: #ff7400; 
+}
+
+.text-align a{
+    padding-right: 30px;
+}
+
+.btn a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+.btn a{
+    color: #f1c30f;
+}
+
+/* rodapé do site */
+.myFooter{
+    padding-left: 25%;
+    padding-right: 15%;
+}
+
+.myFooter p{
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.myFooter h2{
+    color: #ff7400;
+    font-family: 'Fredoka One', cursive, sans-serif;
+}
+
+.myFooter a{
+    color: #fff;
+}
+
+.myFooter span{
+    color: #ff7400;
+}
+
+.myFooter div{
+    color: #fff;
+}
+
+footer {
+    bottom: 0px;
+    width: 100%;
+    background: rgb(49, 49, 49);
+}
+
+.main-content {
+    display: flex;
+}
+
+.main-content .box{
+    flex-basis: 50%;
+    padding: 10px 20px;
+}
+
+.box h2{
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-top: 15px;
+}
+
+.box .content{
+    margin: 20px 0 0 0;
+}
+
+.left .content p{
+    text-align: justify;
+}
+
+.left .content .social{
+    margin: 20px 0 0 0;
+}
+
+.left .content .social a{
+    padding: 0 2px;
+}
+
+.left .content .social a span{
+    height: 40px;
+    width: 40px;
+    background: #1a1a1a;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.left .content .social a span:hover{
+    background: #6e6e6e;
+}
+
+.text {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.content button{
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   background-color: #ff7400;
+   border-color: #ff7400; 
+}
+
+.foter-end {
+    padding-left: 20%;
+    background-color: rgb(49, 49, 49);
+}
+
+.foter-end a{
+    color: rgb(117, 117, 117);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0px 2px 0px 10px;
+}
+
+.foter-end a:hover{
+    color: #ff7400;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
